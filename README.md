@@ -1,0 +1,2 @@
+# FrpAssist
+在window下使用frp进行内网穿透远程控制桌面的frp启动脚本，快速配置frpc，设置开机自启
