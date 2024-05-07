@@ -28,10 +28,10 @@ void outputMessage(QtMsgType type, const QMessageLogContext &context, const QStr
     QString current_date = current_date_time.toString("yyyy-MM-dd hh:mm:ss ddd");
     QString message = text.append(msg).append("(").append(current_date).append(")");
 
-    QFile file(QCoreApplication::applicationDirPath()+ "/log.txt");
+    QFile file(QCoreApplication::applicationDirPath() + "/log.txt");
     file.open(QIODevice::WriteOnly | QIODevice::Append);
-    // file.resize(0);
-   
+    file.resize(0);
+
     QTextStream text_stream(&file);
     text_stream << message << "\r\n";
     file.close();
@@ -41,10 +41,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    
     qInstallMessageHandler(outputMessage);
     Widget w;
- qDebug()<<QCoreApplication::applicationDirPath();
+    qDebug() << QCoreApplication::applicationDirPath();
     QSettings settings("AssistFrpc", "widget");
     bool book = settings.value("book", false).toBool();
 
