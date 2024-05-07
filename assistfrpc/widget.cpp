@@ -16,14 +16,13 @@
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
 {
-    
+
     initUi();
     readConfig();
     connect(btn_confirm, &CustomButton::clicked, this, &Widget::on_btnClicked);
     connect(switch_btn, &SwitchButton::clicked, [=](bool book)
-    {
+            {
         setProcessAutoRun(book);
-
         writeConfig(); });
 
     // qDebug()<<QApplication::applicationFilePath();
@@ -125,16 +124,13 @@ void Widget::killProcess(const char *processName)
 void Widget::setProcessAutoRun(bool flag)
 {
 
-    QSettings settings(AUTO_RUN, QSettings::NativeFormat);
-    QString path = QCoreApplication::applicationDirPath() + "/frpc/";
-    QString appName = "frpc";
-    QString exe_path="\""+path+"frpc.exe"+"\""+ " -c "+"\""+ path+"frpc.toml"+"\"";
-    QString a="\"123\"";
-    qDebug()<<a;
-    qDebug()<<exe_path;
+    QSettings settings(AUTO_RUN, QSettings::Registry64Format);
+    QString path = QCoreApplication::applicationFilePath();
+
+    QString appName = "assistfrpc";
     // 如果注册表中的路径和当前程序路径不一样，则表示没有设置自启动或本自启动程序已经更换了路径
-    QString oldPath = settings.value(appName).toString(); // 获取目前的值-绝对路劲
-    QString newPath = QDir::toNativeSeparators(exe_path);     // toNativeSeparators函数将"/"替换为"\"
+    QString oldPath = settings.value(appName).toString();      // 获取目前的值-绝对路劲
+    QString newPath = QDir::toNativeSeparators(path) + " min"; // toNativeSeparators函数将"/"替换为"\"
     if (flag)
     {
         if (oldPath != newPath)
@@ -146,45 +142,21 @@ void Widget::setProcessAutoRun(bool flag)
 
 void Widget::readConfig()
 {
-    // QFile file("config.ini");
-    // file.open(QIODevice::ReadOnly);
-    // QTextStream in(&file);
-    // serverIp = in.readLine();
-    // serverPort = in.readLine().toInt();
-    // port = in.readLine().toInt();
-    // book = in.readLine().toInt();
-    // file.close();
-
-    QSettings settings("AssustFrpc", "widget");
-    server_ip->setText(settings.value("server_ip","").toString());
-    server_port->setText(settings.value("server_port","").toString());
-    remote_port->setText(settings.value("remote_port","").toString());
-    switch_btn->changeState(settings.value("book",false).toBool());
+    QSettings settings("AssistFrpc", "widget");
+    server_ip->setText(settings.value("server_ip", "").toString());
+    server_port->setText(settings.value("server_port", "").toString());
+    remote_port->setText(settings.value("remote_port", "").toString());
+    switch_btn->changeState(settings.value("book", false).toBool());
 }
 
 void Widget::writeConfig()
 {
-    
-    // serverIp = server_ip->text();
-    // serverPort = server_port->text().toInt();
-    // port = remote_port->text().toInt();
 
-    // QFile file("config.ini");
-    // file.open(QIODevice::ReadWrite);
-    // file.resize(0);
-    // QTextStream out(&file);
-    // out << serverIp << "\n";
-    // out << QString::number(serverPort) << "\n";
-    // out << QString::number(port) << "\n";
-    // out << QString::number(book) << "\n";
-    // file.close();
-
-    QSettings settings("AssustFrpc", "widget");
-    settings.setValue("server_ip",server_ip->text());
-    settings.setValue("server_port",server_port->text());
-    settings.setValue("remote_port",remote_port->text());
-    settings.setValue("book",switch_btn->getState());
-
+    QSettings settings("AssistFrpc", "widget");
+    settings.setValue("server_ip", server_ip->text());
+    settings.setValue("server_port", server_port->text());
+    settings.setValue("remote_port", remote_port->text());
+    settings.setValue("book", switch_btn->getState());
 }
 
 Widget::~Widget() {}
@@ -197,7 +169,7 @@ void Widget::on_btnClicked()
 
     QString currentPath = QCoreApplication::applicationDirPath();
     QFile file(currentPath + "/frpc/frpc.toml");
-    qDebug()<<file.fileName();
+    // qDebug() << file.fileName();
     if (!file.open(QIODevice::ReadWrite))
     {
         qDebug() << "error";
@@ -217,6 +189,7 @@ void Widget::on_btnClicked()
     file.close();
 
     const char *targetProcessName = "frpc.exe";
+
     if (isProcessRunning(targetProcessName))
     {
         killProcess(targetProcessName);
@@ -229,9 +202,17 @@ void Widget::on_btnClicked()
     bool m_frpOk;
     m_frpOk = process.startDetached(cmdParam, list);
     if (m_frpOk)
+    {
         qDebug() << "frp start success!!!";
+        qInfo("success!");
+    }
+
     else
+    {
+
+        qInfo("fatal");
         qDebug() << "frp start failed..." << cmdParam << m_frpOk << process.errorString();
+    }
 
     writeConfig();
 }

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'custombutton.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.14.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,8 +12,8 @@
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'custombutton.h' doesn't include <QObject>."
-#elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.14.2. It"
+#elif Q_MOC_OUTPUT_REVISION != 68
+#error "This file was generated using the moc from 6.2.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -22,24 +22,21 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_CustomButton_t {
-    QByteArrayData data[8];
+    const uint offsetsAndSize[16];
     char stringdata0[58];
 };
-#define QT_MOC_LITERAL(idx, ofs, len) \
-    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_CustomButton_t, stringdata0) + ofs \
-        - idx * sizeof(QByteArrayData)) \
-    )
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(offsetof(qt_meta_stringdata_CustomButton_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_CustomButton_t qt_meta_stringdata_CustomButton = {
     {
-QT_MOC_LITERAL(0, 0, 12), // "CustomButton"
-QT_MOC_LITERAL(1, 13, 7), // "clicked"
-QT_MOC_LITERAL(2, 21, 0), // ""
-QT_MOC_LITERAL(3, 22, 10), // "clicked_id"
-QT_MOC_LITERAL(4, 33, 2), // "id"
-QT_MOC_LITERAL(5, 36, 7), // "BtnType"
-QT_MOC_LITERAL(6, 44, 7), // "general"
-QT_MOC_LITERAL(7, 52, 5) // "color"
+QT_MOC_LITERAL(0, 12), // "CustomButton"
+QT_MOC_LITERAL(13, 7), // "clicked"
+QT_MOC_LITERAL(21, 0), // ""
+QT_MOC_LITERAL(22, 10), // "clicked_id"
+QT_MOC_LITERAL(33, 2), // "id"
+QT_MOC_LITERAL(36, 7), // "BtnType"
+QT_MOC_LITERAL(44, 7), // "general"
+QT_MOC_LITERAL(52, 5) // "color"
 
     },
     "CustomButton\0clicked\0\0clicked_id\0id\0"
@@ -50,29 +47,29 @@ QT_MOC_LITERAL(7, 52, 5) // "color"
 static const uint qt_meta_data_CustomButton[] = {
 
  // content:
-       8,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        2,   14, // methods
-       1,   28, // properties
-       1,   31, // enums/sets
+       1,   30, // properties
+       1,   35, // enums/sets
        0,    0, // constructors
        0,       // flags
        2,       // signalCount
 
- // signals: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x06 /* Public */,
-       3,    1,   25,    2, 0x06 /* Public */,
+ // signals: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    0,   26,    2, 0x06,    2 /* Public */,
+       3,    1,   27,    2, 0x06,    3 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::SChar,    4,
 
  // properties: name, type, flags
-       4, QMetaType::SChar, 0x00095103,
+       4, QMetaType::SChar, 0x00015103, uint(-1), 0,
 
  // enums: name, alias, flags, count, data
-       5,    5, 0x0,    2,   36,
+       5,    5, 0x0,    2,   40,
 
  // enum data: key, value
        6, uint(CustomButton::general),
@@ -85,7 +82,7 @@ void CustomButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         auto *_t = static_cast<CustomButton *>(_o);
-        Q_UNUSED(_t)
+        (void)_t;
         switch (_id) {
         case 0: _t->clicked(); break;
         case 1: _t->clicked_id((*reinterpret_cast< qint8(*)>(_a[1]))); break;
@@ -111,7 +108,7 @@ void CustomButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
 #ifndef QT_NO_PROPERTIES
     else if (_c == QMetaObject::ReadProperty) {
         auto *_t = static_cast<CustomButton *>(_o);
-        Q_UNUSED(_t)
+        (void)_t;
         void *_v = _a[0];
         switch (_id) {
         case 0: *reinterpret_cast< qint8*>(_v) = _t->getId(); break;
@@ -119,23 +116,30 @@ void CustomButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         }
     } else if (_c == QMetaObject::WriteProperty) {
         auto *_t = static_cast<CustomButton *>(_o);
-        Q_UNUSED(_t)
+        (void)_t;
         void *_v = _a[0];
         switch (_id) {
         case 0: _t->setId(*reinterpret_cast< qint8*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
+    } else if (_c == QMetaObject::BindableProperty) {
     }
 #endif // QT_NO_PROPERTIES
 }
 
-QT_INIT_METAOBJECT const QMetaObject CustomButton::staticMetaObject = { {
+const QMetaObject CustomButton::staticMetaObject = { {
     QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
-    qt_meta_stringdata_CustomButton.data,
+    qt_meta_stringdata_CustomButton.offsetsAndSize,
     qt_meta_data_CustomButton,
     qt_static_metacall,
     nullptr,
+qt_incomplete_metaTypeArray<qt_meta_stringdata_CustomButton_t
+, QtPrivate::TypeAndForceComplete<qint8, std::true_type>, QtPrivate::TypeAndForceComplete<CustomButton, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<qint8, std::false_type>
+
+
+
+>,
     nullptr
 } };
 
@@ -164,23 +168,14 @@ int CustomButton::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 2)
-            *reinterpret_cast<int*>(_a[0]) = -1;
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 2;
     }
 #ifndef QT_NO_PROPERTIES
     else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
-            || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
+            || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
+            || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
-    } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 1;
-    } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 1;
-    } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 1;
-    } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 1;
-    } else if (_c == QMetaObject::QueryPropertyUser) {
         _id -= 1;
     }
 #endif // QT_NO_PROPERTIES

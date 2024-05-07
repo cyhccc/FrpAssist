@@ -1,7 +1,7 @@
 [common]
 server_addr = 149.104.23.54 
 server_port =  7000 
-[DESKTOP-VM40J4T]
+[DESKTOP-J7K7NUP]
 type=tcp
 local_port = 3389 
 remote_port=3389

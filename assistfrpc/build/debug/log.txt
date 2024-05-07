@@ -1,0 +1,3 @@
+Debug:QList("C:\\Users\\11141\\Desktop\\FrpAssist\\assistfrpc\\build\\debug\\assistfrpc.exe")(2024-05-08 00:01:53 Wed)
+Debug:"C:/Users/11141/Desktop/FrpAssist/assistfrpc/build/debug"(2024-05-08 00:03:30 Wed)
+Debug:QList("C:\\Users\\11141\\Desktop\\FrpAssist\\assistfrpc\\build\\debug\\assistfrpc.exe")(2024-05-08 00:03:30 Wed)

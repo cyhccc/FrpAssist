@@ -1,0 +1,5 @@
+Debug:QList("C:\\Users\\11141\\Desktop\\FrpAssist\\assistfrpc\\build\\release\\assistfrpc.exe")(2024-05-07 23:56:03 Tue)
+Debug:"C:/Users/11141/Desktop/FrpAssist/assistfrpc/build/release"(2024-05-08 00:04:18 Wed)
+Debug:QList("C:\\Users\\11141\\Desktop\\FrpAssist\\assistfrpc\\build\\release\\assistfrpc.exe")(2024-05-08 00:04:18 Wed)
+Debug:"C:/Users/11141/Desktop/FrpAssist/assistfrpc/build/release"(2024-05-08 00:06:00 Wed)
+Debug:QList("C:\\Users\\11141\\Desktop\\FrpAssist\\assistfrpc\\build\\release\\assistfrpc.exe")(2024-05-08 00:06:00 Wed)

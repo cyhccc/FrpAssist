@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'switchbutton.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.14.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,8 +12,8 @@
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'switchbutton.h' doesn't include <QObject>."
-#elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.14.2. It"
+#elif Q_MOC_OUTPUT_REVISION != 68
+#error "This file was generated using the moc from 6.2.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -22,19 +22,16 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_SwitchButton_t {
-    QByteArrayData data[3];
+    const uint offsetsAndSize[6];
     char stringdata0[22];
 };
-#define QT_MOC_LITERAL(idx, ofs, len) \
-    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_SwitchButton_t, stringdata0) + ofs \
-        - idx * sizeof(QByteArrayData)) \
-    )
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(offsetof(qt_meta_stringdata_SwitchButton_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_SwitchButton_t qt_meta_stringdata_SwitchButton = {
     {
-QT_MOC_LITERAL(0, 0, 12), // "SwitchButton"
-QT_MOC_LITERAL(1, 13, 7), // "clicked"
-QT_MOC_LITERAL(2, 21, 0) // ""
+QT_MOC_LITERAL(0, 12), // "SwitchButton"
+QT_MOC_LITERAL(13, 7), // "clicked"
+QT_MOC_LITERAL(21, 0) // ""
 
     },
     "SwitchButton\0clicked\0"
@@ -44,7 +41,7 @@ QT_MOC_LITERAL(2, 21, 0) // ""
 static const uint qt_meta_data_SwitchButton[] = {
 
  // content:
-       8,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
        1,   14, // methods
@@ -54,8 +51,8 @@ static const uint qt_meta_data_SwitchButton[] = {
        0,       // flags
        1,       // signalCount
 
- // signals: name, argc, parameters, tag, flags
-       1,    1,   19,    2, 0x06 /* Public */,
+ // signals: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    1,   20,    2, 0x06,    1 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    2,
@@ -67,7 +64,7 @@ void SwitchButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         auto *_t = static_cast<SwitchButton *>(_o);
-        Q_UNUSED(_t)
+        (void)_t;
         switch (_id) {
         case 0: _t->clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
@@ -84,12 +81,18 @@ void SwitchButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject SwitchButton::staticMetaObject = { {
+const QMetaObject SwitchButton::staticMetaObject = { {
     QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
-    qt_meta_stringdata_SwitchButton.data,
+    qt_meta_stringdata_SwitchButton.offsetsAndSize,
     qt_meta_data_SwitchButton,
     qt_static_metacall,
     nullptr,
+qt_incomplete_metaTypeArray<qt_meta_stringdata_SwitchButton_t
+, QtPrivate::TypeAndForceComplete<SwitchButton, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>
+
+
+
+>,
     nullptr
 } };
 
@@ -118,7 +121,7 @@ int SwitchButton::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 1;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 1)
-            *reinterpret_cast<int*>(_a[0]) = -1;
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 1;
     }
     return _id;
