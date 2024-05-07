@@ -10,6 +10,7 @@ public:
     explicit SwitchButton(QWidget *parent = nullptr);
     explicit SwitchButton(int w,int h,QWidget *parent = nullptr);
     void changeState(bool book);
+    bool getState();
 signals:
      void clicked(bool);
     // QWidget interface

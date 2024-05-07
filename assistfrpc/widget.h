@@ -29,10 +29,10 @@ private:
     CustomButton *btn_confirm;
     SwitchButton *switch_btn;
 
-    QString serverIp;
-    int serverPort;
-    int port;
-    bool book;
+    // QString serverIp;
+    // int serverPort;
+    // int port;
+    // bool book;
 
 };
 #endif // WIDGET_H
