@@ -101,7 +101,8 @@
             "command": "${workspaceFolderBasename}.exe",
             "dependsOn": [
                 "make-release"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "clean",
