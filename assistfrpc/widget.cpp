@@ -1,4 +1,5 @@
 #include "widget.h"
+
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
